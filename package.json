@@ -1,13 +1,23 @@
 {
   "name": "mini-reservation-system",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Learning project: Reservation system with Node.js + Express + SQLite",
+  "main": "server/server.js",
   "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Willy Pottier",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
 }
