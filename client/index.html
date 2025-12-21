@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de réservations</title>
+    <link rel="stylesheet" href="/client/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Réservations restaurant</h1>
+
+        <!--FORMULAIRE-->
+        <section class="form-section">
+            <h2>Nouvelle réservation</h2>
+            <form id="reservation-form">
+                <input type="text" id="nom" placeholder="Nom *" required>
+                <input type="email" id="email" placeholder="Email *" required>
+                <input type="tel" id="telephone" placeholder="Téléphone">
+                <input type="date" id="date" required>
+                <label for="date">Date</label>
+                <input type="time" id="heure" required>
+                <label for="heure">Heure</label>
+                <input type="number" id="nb_personnes" placeholder="Nombre de personnes *" min="1" max="20" required>
+                <textarea id="commentaire" placeholder="Commentaire (optionnel)"></textarea>
+
+                <button type="submit">Réserver</button>
+            </form>
+            <div id="message"></div>
+        </section>
+
+        <!-- LISTE DES RÉSERVATIONS -->
+        <section class="list-section">
+            <h2>Réservations existantes</h2>
+            <div id="reservations-list"></div>
+        </section>
+    </div>
+
+    <script src="/client/app.js"></script>
+</body>
+</html>
