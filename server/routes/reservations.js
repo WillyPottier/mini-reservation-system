@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../database.js');
+const { validateReservation } = require('../middlewares/validation.js');
 const router = express.Router();
 
 // Récupérer toutes les réservations
@@ -14,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // Créer une nouvelle réservation
-router.post('/', (req, res) => {
+router.post('/', validateReservation, (req, res) => {
     // console.log("req.body =", req.body);
     // console.log("Type:", typeof req.body);
     const { nom, email, telephone, date, heure, nb_personnes, commentaire } = req.body;
@@ -43,6 +44,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// Supprimer une réservation
 router.delete('/:id', (req, res) => {
   const id = req.params.id;
   
@@ -55,7 +57,8 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-router.put('/:id', (req, res) => {
+// Modifier une réservation
+router.put('/:id', validateReservation, (req, res) => {
   const id = req.params.id;
   const { nom, email, telephone, date, heure, nb_personnes, commentaire } = req.body;
   
