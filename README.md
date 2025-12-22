@@ -6,14 +6,14 @@
 - HTML / CSS
 
 ## Architecture du projet :
-/client
-    app.js
-    index.html
-    styles.css
-/server
-    /middlewares/validation.js
-    /routes/reservations.js
-    database.js
-    server.js
+- /client
+    - app.js
+    - index.html
+    - styles.css
+- /server
+    - /middlewares/validation.js
+    - /routes/reservations.js
+    - database.js
+    - server.js
 
 ## Auteur : Willy Pottier
